@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const Climber = require('./models/Climber');
 const Climb = require('./models/Climb');
@@ -7,10 +8,8 @@ const Climb = require('./models/Climb');
 const app = express();
 app.use(express.json());
 
-// app.use((req, res, next) => {
-//   console.log(`${req.method} ${req.url} -- Body:`, req.body);
-//   next();
-// });
+// Enable CORS for all routes
+app.use(cors());
 
 const climberRoutes = require('./routes/climbers');
 app.use('/climbers', climberRoutes);
