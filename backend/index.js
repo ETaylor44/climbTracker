@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI).then(() => console.log('MongoDB connecte
 
 // Routes
 app.get('/', (req, res) => {
-  res.send('Hello from Node.js with MongoDB!');
+  res.send('Hello from Node.js with MongoDB and ReactJS!');
 });
 
 // Start server
